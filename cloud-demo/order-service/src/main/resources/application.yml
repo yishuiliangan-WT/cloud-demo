@@ -13,7 +13,7 @@ spring:
       discovery:
         server-addr: localhost:8848
         cluster-name: HZ
-        namespace: c062820c-f388-4ed9-865b-7f4ed3df3a66
+#        namespace: c062820c-f388-4ed9-865b-7f4ed3df3a66
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -35,3 +35,19 @@ ribbon:
     enabled: true
     clients:
     - userservice
+feign:
+  httpclient:
+#    client:
+#      config:
+#        default:
+#          loggerLevel: BASIC
+    enabled: true
+#    最大连接数
+    max-connections: 200
+#    单个最大连接
+    max-connections-per-route: 50
+#   默认feign的全局配置
+#  client:
+#    config:
+#      default:  如果填写服务名则则为局部服务的配置
+#        logger-level: FULL
